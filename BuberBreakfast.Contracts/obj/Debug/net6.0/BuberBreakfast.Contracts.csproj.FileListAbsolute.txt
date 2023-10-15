@@ -9,3 +9,14 @@ G:\Study\C#\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\BuberBreakf
 G:\Study\C#\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\refint\BuberBreakfast.Contracts.dll
 G:\Study\C#\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\BuberBreakfast.Contracts.pdb
 G:\Study\C#\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\ref\BuberBreakfast.Contracts.dll
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\bin\Debug\net6.0\BuberBreakfast.Contracts.deps.json
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\bin\Debug\net6.0\BuberBreakfast.Contracts.dll
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\bin\Debug\net6.0\BuberBreakfast.Contracts.pdb
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\BuberBreakfast.Contracts.GeneratedMSBuildEditorConfig.editorconfig
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\BuberBreakfast.Contracts.AssemblyInfoInputs.cache
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\BuberBreakfast.Contracts.AssemblyInfo.cs
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\BuberBreakfast.Contracts.csproj.CoreCompileInputs.cache
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\BuberBreakfast.Contracts.dll
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\refint\BuberBreakfast.Contracts.dll
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\BuberBreakfast.Contracts.pdb
+F:\OneDrive - EagleView\repos\sample\my\BuberBreakfast\BuberBreakfast.Contracts\obj\Debug\net6.0\ref\BuberBreakfast.Contracts.dll
