@@ -1,7 +1,6 @@
 using BuberBreakfast.Contracts.Breakfast;
 using BuberBreakfast.Models;
 using BuberBreakfast.Services.Breakfasts;
-using ErrorOr;
 using Microsoft.AspNetCore.Mvc;
 namespace BuberBreakfast.Controllers;
 

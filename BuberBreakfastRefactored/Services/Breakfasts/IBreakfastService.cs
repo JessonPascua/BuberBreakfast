@@ -5,8 +5,8 @@ namespace BuberBreakfastRefactored.Services.Breakfasts;
 
 public interface IBreakfastService
 {
-    void CreateBreakfast(Breakfast breakfast);
+    ErrorOr<Created> CreateBreakfast(Breakfast breakfast);
     ErrorOr<Breakfast> GetBreakfast(Guid id);
-    void DeleteBreakfast(Guid id);
-    void UpdateBreakfast(Breakfast breakfast);
+    ErrorOr<UpsertedBreakfast> UpdateBreakfast(Breakfast breakfast);
+    ErrorOr<Deleted> DeleteBreakfast(Guid id);
 }

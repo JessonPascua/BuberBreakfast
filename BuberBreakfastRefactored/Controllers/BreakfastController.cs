@@ -3,7 +3,6 @@ using BuberBreakfastRefactored.Models;
 using BuberBreakfastRefactored.Services.Breakfasts;
 using Microsoft.AspNetCore.Mvc;
 using ErrorOr;
-using BuberBreakfastRefactored.ServiceErrors; 
 
 namespace BuberBreakfastRefactored.Controllers;
 
@@ -30,22 +29,16 @@ public class BreakfastController : ApiController
             request.Sweet);
 
         // Todo: Save breakfast to database
-        _breakfastService.CreateBreakfast(breakfast);
+        ErrorOr<Created> createBreakfastResult = _breakfastService.CreateBreakfast(breakfast);
 
-        var response = new BreakfastResponse(
-            breakfast.Id,
-            breakfast.Name,
-            breakfast.Description,
-            breakfast.StartDateTime,
-            breakfast.EndDateTime,
-            breakfast.LastModifiedDateTime,
-            breakfast.Savory,
-            breakfast.Sweet);  
+        if (createBreakfastResult.IsError)
+        {
+            return Problem(createBreakfastResult.Errors);
+        }
 
-        return CreatedAtAction(
-            actionName: nameof(GetBreakfast),
-            routeValues: new { id = breakfast.Id }, // Todo: Change to URI
-            response);
+        return createBreakfastResult.Match(
+            created => CreatedAtGetBreakfast(breakfast),
+            errors => Problem(errors));
     }
 
     [HttpGet("{id:guid}")]
@@ -58,21 +51,8 @@ public class BreakfastController : ApiController
             error => Problem(error));
     }
 
-    private static BreakfastResponse MapBreakfastResponse(Breakfast breakfast)
-    {
-        return new BreakfastResponse(
-                    breakfast.Id,
-                    breakfast.Name,
-                    breakfast.Description,
-                    breakfast.StartDateTime,
-                    breakfast.EndDateTime,
-                    breakfast.LastModifiedDateTime,
-                    breakfast.Savory,
-                    breakfast.Sweet);
-    }
-
     [HttpPut("{id:guid}")]
-    public IActionResult CreateBreakfast(Guid id, UpsertBreakfastRequest request)
+    public IActionResult UpsertBreakfast(Guid id, UpsertBreakfastRequest request)
     {
         var breakfast = new Breakfast(
             id,
@@ -84,18 +64,42 @@ public class BreakfastController : ApiController
             request.Savory,
             request.Sweet);
 
-        _breakfastService.UpdateBreakfast(breakfast);
+        ErrorOr<UpsertedBreakfast> upsertBreakfastResult = _breakfastService.UpdateBreakfast(breakfast);
 
-        //Todo: return 301 if a new breakfast was created
-
-        return NoContent();
+        //Todo: return 201 if a new breakfast was created
+        return upsertBreakfastResult.Match(
+            upserted => upserted.IsNewlyCreated ? CreatedAtGetBreakfast(breakfast) : NoContent(),
+            errors => Problem(errors));
     }
 
     [HttpDelete("{id:guid}")]
     public IActionResult DeleteBreakfast(Guid id)
     {
-        _breakfastService.DeleteBreakfast(id);
+        ErrorOr<Deleted> deleteBreakfastResult = _breakfastService.DeleteBreakfast(id);
+        
+        return deleteBreakfastResult.Match(
+            deleted => NoContent(),
+            errors => Problem(errors));
+    }
 
-        return NoContent();
+    private static BreakfastResponse MapBreakfastResponse(Breakfast breakfast)
+    {
+        return new BreakfastResponse(
+            breakfast.Id,
+            breakfast.Name,
+            breakfast.Description,
+            breakfast.StartDateTime,
+            breakfast.EndDateTime,
+            breakfast.LastModifiedDateTime,
+            breakfast.Savory,
+            breakfast.Sweet);
+    }
+
+    private CreatedAtActionResult CreatedAtGetBreakfast(Breakfast breakfast)
+    {
+        return CreatedAtAction(
+            actionName: nameof(GetBreakfast),
+            routeValues: new { id = breakfast.Id }, // Todo: Change to URI
+            value: MapBreakfastResponse(breakfast));
     }
 }
