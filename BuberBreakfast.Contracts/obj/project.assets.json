@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\study\\c#\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj",
+      "projectUniqueName": "f:\\OneDrive - EagleView\\repos\\sample\\my\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj",
       "projectName": "BuberBreakfast.Contracts",
-      "projectPath": "G:\\study\\c#\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj",
+      "projectPath": "f:\\OneDrive - EagleView\\repos\\sample\\my\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj",
       "packagesPath": "C:\\Users\\jesson.pascua\\.nuget\\packages\\",
-      "outputPath": "G:\\study\\c#\\BuberBreakfast\\BuberBreakfast.Contracts\\obj\\",
+      "outputPath": "f:\\OneDrive - EagleView\\repos\\sample\\my\\BuberBreakfast\\BuberBreakfast.Contracts\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jesson.pascua\\AppData\\Roaming\\NuGet\\NuGet.Config",
