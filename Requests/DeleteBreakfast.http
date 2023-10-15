@@ -1,3 +1,6 @@
 @id=f3663d91-0cce-408d-8819-faa65dd280e6
 
 DELETE http://localhost:5219/breakfast/{{id}}
+
+###
+DELETE http://localhost:5067/breakfast/{{id}}

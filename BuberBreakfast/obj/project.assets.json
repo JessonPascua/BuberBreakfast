@@ -62,11 +62,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "G:\\Study\\C#\\BuberBreakfast\\BuberBreakfast\\BuberBreakfast.csproj",
+      "projectUniqueName": "G:\\study\\c#\\BuberBreakfast\\BuberBreakfast\\BuberBreakfast.csproj",
       "projectName": "BuberBreakfast",
-      "projectPath": "G:\\Study\\C#\\BuberBreakfast\\BuberBreakfast\\BuberBreakfast.csproj",
+      "projectPath": "G:\\study\\c#\\BuberBreakfast\\BuberBreakfast\\BuberBreakfast.csproj",
       "packagesPath": "C:\\Users\\jesson.pascua\\.nuget\\packages\\",
-      "outputPath": "G:\\Study\\C#\\BuberBreakfast\\BuberBreakfast\\obj\\",
+      "outputPath": "G:\\study\\c#\\BuberBreakfast\\BuberBreakfast\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\jesson.pascua\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -83,8 +83,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "G:\\Study\\C#\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj": {
-              "projectPath": "G:\\Study\\C#\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj"
+            "G:\\study\\c#\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj": {
+              "projectPath": "G:\\study\\c#\\BuberBreakfast\\BuberBreakfast.Contracts\\BuberBreakfast.Contracts.csproj"
             }
           }
         }
