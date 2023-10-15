@@ -7,9 +7,7 @@ using BuberBreakfastRefactored.ServiceErrors;
 
 namespace BuberBreakfastRefactored.Controllers;
 
-[ApiController]
-[Route("[controller]")]
-public class BreakfastController : ControllerBase
+public class BreakfastController : ApiController
 {
     private readonly IBreakfastService _breakfastService;
 
@@ -55,24 +53,22 @@ public class BreakfastController : ControllerBase
     {
         ErrorOr<Breakfast> getBreakfastResult = _breakfastService.GetBreakfast(id);
 
-        if (getBreakfastResult.IsError && getBreakfastResult.FirstError == Errors.BuberBreakfast.NotFound) 
-        {
-            return NotFound();
-        }
+        return getBreakfastResult.Match(
+            breakfast => Ok(MapBreakfastResponse(breakfast)),
+            error => Problem(error));
+    }
 
-        var breakfast = getBreakfastResult.Value;
-
-        var response = new BreakfastResponse(
-            breakfast.Id,
-            breakfast.Name,
-            breakfast.Description,
-            breakfast.StartDateTime,
-            breakfast.EndDateTime,
-            breakfast.LastModifiedDateTime,
-            breakfast.Savory,
-            breakfast.Sweet);
-            
-        return Ok(response);
+    private static BreakfastResponse MapBreakfastResponse(Breakfast breakfast)
+    {
+        return new BreakfastResponse(
+                    breakfast.Id,
+                    breakfast.Name,
+                    breakfast.Description,
+                    breakfast.StartDateTime,
+                    breakfast.EndDateTime,
+                    breakfast.LastModifiedDateTime,
+                    breakfast.Savory,
+                    breakfast.Sweet);
     }
 
     [HttpPut("{id:guid}")]
